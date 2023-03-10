@@ -1,0 +1,15 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: syncthing
+  author: librick
+  description: Install and configure Syncthing.
+  license: "MIT"
+  min_ansible_version: "2.14.1"
+  platforms:
+    - name: Debian
+      versions:
+        - all
+  galaxy_tags:
+    - syncthing

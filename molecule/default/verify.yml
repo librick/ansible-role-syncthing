@@ -1,0 +1,25 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: Stat /usr/bin/syncthing file.
+    ansible.builtin.stat:
+      path: "/usr/bin/syncthing"
+    register: r_stat_syncthing_binary
+
+  - name: Assert /usr/bin/syncthing file exists with correct permissions.
+    ansible.builtin.assert:
+      that:
+        - r_stat_syncthing_binary.stat.exists is defined
+        - r_stat_syncthing_binary.stat.exists
+        - r_stat_syncthing_binary.stat.isdir is defined
+        - not r_stat_syncthing_binary.stat.isdir
+        - r_stat_syncthing_binary.stat.executable is defined
+        - r_stat_syncthing_binary.stat.executable
+        - r_stat_syncthing_binary.stat.gr_name is defined
+        - r_stat_syncthing_binary.stat.gr_name == "root"
+        - r_stat_syncthing_binary.stat.pw_name is defined
+        - r_stat_syncthing_binary.stat.pw_name == "root"
+        - r_stat_syncthing_binary.stat.mode == "0755"

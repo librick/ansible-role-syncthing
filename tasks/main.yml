@@ -1,0 +1,9 @@
+---
+- name: Ensure syncthing apt package is installed.
+  ansible.builtin.apt:
+    name: syncthing
+    state: present
+  become: true
+  become_user: root
+  notify:
+    - Restart syncthing daemon.

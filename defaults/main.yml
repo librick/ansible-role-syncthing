@@ -1,0 +1,1 @@
+syncthing_user: "{{ ansible_user }}"

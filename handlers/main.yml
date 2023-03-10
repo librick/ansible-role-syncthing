@@ -1,0 +1,8 @@
+---
+- name: Restart syncthing daemon.
+  ansible.builtin.service:
+    name: syncthing@{{ syncthing_user }}.service
+    enabled: true
+    state: restarted
+  become: true
+  become_user: root
