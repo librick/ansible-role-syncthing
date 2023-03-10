@@ -6,6 +6,8 @@ See: [https://github.com/syncthing/](https://github.com/syncthing/)
 See: [https://en.wikipedia.org/wiki/Syncthing](https://en.wikipedia.org/wiki/Syncthing)  
 See: [https://syncthing.net/](https://syncthing.net/)
 
+![Syncthing](./syncthing.png?raw=true "Syncthing")
+
 ## Role Variables
 See [defaults/main.yml](./defaults/main.yml).
 
